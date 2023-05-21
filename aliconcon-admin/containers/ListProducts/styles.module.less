@@ -1,0 +1,40 @@
+.root {
+  .title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 24px;
+    color: #000000;
+  }
+  .formContainer {
+    :global {
+      .name {
+        flex: 7;
+      }
+      .plan {
+        flex: 1.5;
+      }
+      .date {
+        flex: 2.5;
+      }
+      .btn-submit {
+        flex: 1;
+      }
+    }
+  }
+  :global {
+    .ant-table-container {
+      font-family: Inter;
+    }
+    .ant-table-cell {
+      padding: 8px 16px !important;
+    }
+    .btn-create {
+      border-radius: 24px;
+      color: #FFFFFF;
+      font-family: Roboto;
+      padding: 4px 34px;
+      height: fit-content;
+    }
+  }
+}

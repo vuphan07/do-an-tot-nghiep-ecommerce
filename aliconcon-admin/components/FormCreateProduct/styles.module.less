@@ -1,0 +1,38 @@
+.root {
+  font-family: 'Open Sans';
+  :global {
+    .title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 24px;
+      color: #000000;
+    }
+    .group-btn {
+      display: flex;
+      gap: 12px;
+      button {
+        border-radius: 24px;
+        padding: 4px 24px;
+        height: fit-content;
+      }
+    }
+    .ant-form-item {
+      gap: 14px;
+      .ant-input-number {
+        width: 100% !important;
+      }
+    }
+    .ant-form-item-label {
+      min-width: 195px;
+      flex: 3;
+      display: flex;
+      justify-content: center;
+      background: #EBEFFA;
+      text-align: center;
+    }
+    .ant-form-item-control {
+      flex: 9;
+    }
+  }
+}

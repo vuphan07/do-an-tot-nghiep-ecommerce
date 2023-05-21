@@ -1,0 +1,191 @@
+@import "~antd/lib/style/themes/default.less";
+@font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", "Yu Gothic", "Noto Sans", Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+@primary-color: #313eaa;
+@text-color: #222731;
+@alert-text-color: #ff647c;
+@white-color: #ffffff;
+@porcelain-color: #f0f1f2;
+@congress-blue-color: #064592;
+@scandal-color: #e3fcf3;
+@colonial-white-color: #fdf3d3;
+@bright-sun-color: #ffd142;
+@shamrock-color: #52d69e;
+@red-color: #fd4f54;
+@yellow-color: #ffd142;
+@indigo-color: #3864ca;
+@alto-color: #d9d9d9;
+@gallery-color: #f0f0f0;
+@magic-mint-color: #b2f0da;
+@cornflower-lilac-color: #fea7a9;
+@salomie-color: #ffe080;
+@shuttle-gray-color: #555c69;
+@manatee-color: #9399a5;
+@athens-gray-color: #f0f2f5;
+@layout-padding: 12px;
+@disabled-color-dark: rgba(255, 255, 255, 0.64);
+@light-blue-color: #ebeffa;
+@cyan-blue-color: #d8dde7;
+@athens-gray-color: #f4f5f7;
+@alabaster-color: #f9f9f9;
+@color-FFE080: #ffe080;
+@avatar-bg: #fde3cf;
+@avatar-color: #f56a00;
+@color-link: #0094ff;
+// @tablet: ~'only screen and (max-width: 600px)';
+
+// // Media queries breakpoints
+// // @screen-xs and @screen-xs-min is not used in Grid
+// // smallest break point is @screen-md
+// @screen-xs: 480px;
+// @screen-xs-min: @screen-xs;
+// // 👆 Extra small screen / phone
+
+// // 👇 Small screen / tablet
+// @screen-sm: 576px;
+// @screen-sm-min: @screen-sm;
+
+// // Medium screen / desktop
+// @screen-md: 768px;
+// @screen-md-min: @screen-md;
+
+// // Large screen / wide desktop
+// @screen-lg: 992px;
+// @screen-lg-min: @screen-lg;
+
+// // Extra large screen / full hd
+// @screen-xl: 1200px;
+// @screen-xl-min: @screen-xl;
+
+// // Extra extra large screen / large desktop
+// @screen-xxl: 1600px;
+// @screen-xxl-min: @screen-xxl;
+
+// // provide a maximum
+// @screen-xs-max: (@screen-sm-min - 1px);
+// @screen-sm-max: (@screen-md-min - 1px);
+// @screen-md-max: (@screen-lg-min - 1px);
+// @screen-lg-max: (@screen-xl-min - 1px);
+// @screen-xl-max: (@screen-xxl-min - 1px);
+
+@extra-extra-desktop: ~"only screen and (min-width: @{screen-xxl})";
+@extra-desktop: ~"only screen and (min-width: @{screen-xl}) and (max-width: @{screen-xl-max})";
+@desktop: ~"only screen and (min-width: @{screen-lg}) and (max-width: @{screen-lg-max})";
+@small-desktop-or-laptop: ~"only screen and (min-width: @{screen-md}) and (max-width: @{screen-md-max})";
+@mobile-and-tablet: ~"only screen and (max-width: @{screen-sm-max})";
+@tablet: ~"only screen and (min-width: @{screen-sm}) and (max-width: @{screen-sm-max})";
+@mobile: ~"only screen and (max-width: @{screen-xs-max})";
+
+.ant-alert-message {
+  color: @alert-text-color !important;
+}
+
+.ph_120 {
+  padding: 0 120px;
+}
+@media @mobile-and-tablet {
+  .ph_16_mobile {
+    padding: 0 16px;
+  }
+  .ph_0_mobile {
+    padding: 0 0px;
+  }
+}
+.mh_24 {
+  margin: 0 @margin-lg;
+}
+.mt_32 {
+  margin-top: @margin-lg + 8;
+}
+
+.color-primary {
+  color: @primary-color !important;
+}
+
+.bg-light-blue {
+  background-color: @light-blue-color;
+}
+.color-indigo {
+  color: @indigo-color;
+}
+.link {
+  color: @color-link;
+  cursor: pointer;
+}
+.bg-color-indigo {
+  background-color: @indigo-color;
+}
+.line {
+  &::after {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 3px;
+    background-color: @indigo-color;
+  }
+}
+
+.ant-tag.ant-tag-checkable {
+  background-color: rgb(240, 245, 255);
+  border: 1px solid rgb(173, 198, 255);
+  color: rgb(47, 84, 235);
+  &.ant-tag-checkable-checked {
+    color: #fff;
+    background-color: rgb(47, 84, 235);
+  }
+}
+
+// Custom Arterisk to Right Side
+.ant-form-item-required::before {
+  content: "" !important;
+}
+
+.ant-form-item-label
+  > label.ant-form-item-required:not(
+    .ant-form-item-required-mark-optional
+  )::after {
+  display: inline-block;
+  margin-right: 1px;
+  color: #ff4d4f;
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: "*";
+}
+.required {
+  color: #ff4d4f;
+  font-family: SimSun, sans-serif;
+  font-size: 14px;
+  margin-left: 1px;
+  display: inline-block;
+}
+
+.ant-form-item-with-help {
+  margin-bottom: 2px;
+}
+
+th.ant-table-cell {
+  text-align: left !important;
+  white-space: nowrap;
+}
+
+.ant-table-tbody .ant-table-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #757575; /* color of the scroll thumb */
+  border-radius: 12px; /* roundness of the scroll thumb */
+  border: 2px solid transparent; /* creates padding around scroll thumb */
+}

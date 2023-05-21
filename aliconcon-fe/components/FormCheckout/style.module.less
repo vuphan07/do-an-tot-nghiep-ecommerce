@@ -1,0 +1,34 @@
+.formWrapper {
+    padding: @padding-lg;
+    background-color: @white;
+    margin-top: @margin-sm;
+    margin-bottom: @margin-sm;
+    :global {
+      .title {
+        color: @primary-color;
+        text-decoration: underline;
+        text-underline-offset: 0.5em;
+        margin-bottom: @margin-lg;
+      }
+      .add-input {
+        flex: 1 !important;
+      }
+    }
+  }
+  
+  .name {
+    width: 85px;
+    text-align: center;
+    border-radius: 2px 2px 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 2px;
+    :global {
+      .ant-typography {
+        font-size: @font-size-sm;
+        flex: 1
+      }
+    }
+  }
+  

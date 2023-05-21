@@ -1,0 +1,14 @@
+.form {
+  padding-top: @padding-md;
+  align-items: center;
+  :global {
+    .input-name {
+      flex: 1;
+      position: relative;
+      & .span_description {
+        position: absolute;
+        top: -25px;
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+.root {
+  margin: 24px;
+  .title {
+    color: @indigo-color;
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+  }
+  :global {
+    .ant-typography {
+      font-family: 'Roboto';
+    }
+    .content {
+      max-width: 920px;
+      margin: 45px auto;
+      .ant-form-item {
+        gap: 16px;
+        .ant-form-item-label {
+          background: #EBEFFA;
+          padding: 4px;
+          text-align: center;
+          max-height: 40px;
+          label {
+            height: 100%;
+          }
+        }
+        input {
+          padding: 8px 12px
+        }
+        .ant-select-selector {
+          padding: 4px 12px;
+          height: fit-content;
+        }
+      }
+      .group-btn {
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+        button {
+          width: 120px;
+          height: 28px;
+          font-family: 'Roboto';
+        }
+        .btn-cancel {
+          color: #3864CA;
+          border-color: #3864CA;
+        }
+        .btn-delete {
+          background: #CA3838;
+          border-color: #CA3838;
+          color: #FFFFFF;
+        }
+      }
+    }
+    .ant-form-item-label {
+      & > label {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  .logo {
+    border-radius: 0;
+    & img {
+      object-fit: contain;
+    }
+  }
+  .btnUpload {
+    position: absolute;
+    top: 78%;
+    left: 15%;
+  }
+}
+.popup {
+  :global {
+    .ant-typography {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.08em;
+      color: #000000;
+    }
+    .ant-modal-footer {
+      display: flex;
+      flex-direction: row-reverse;
+      border-top: unset;
+      gap: 12px;
+      button {
+        border-radius: 24px;
+        padding: 4px 24px;
+        height: fit-content;
+      }
+    }
+  }
+}

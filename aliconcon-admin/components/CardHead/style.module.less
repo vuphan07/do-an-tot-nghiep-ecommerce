@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media @mobile-and-tablet {
+    flex-direction: column;
+  }
+  .btnDefault {
+    background-color: @indigo-color;
+    border-radius: 2px 0px 0px 2px;
+    color: @white-color;
+    @media @mobile-and-tablet {
+      width: 120px;
+    }
+  }
+  .btnPrimary {
+    background: @white-color;
+    box-shadow: inset -1px 0px 0px @alto-color, inset 0px 1px 0px @alto-color, inset 0px -1px 0px @alto-color;
+    border-radius: 0px 2px 2px 0px;
+    @media @mobile-and-tablet {
+      width: 120px;
+    }
+  }
+
+  :global {
+    h4.ant-typography {
+      color: @indigo-color;
+      margin-bottom: 0;
+      @media @mobile-and-tablet {
+        font-size: @font-size-base;
+        line-height: 24px;
+        color: @text-color;
+        margin-bottom: 8px;
+      }
+    }
+    .ant-space {
+      gap: 0 !important;
+    }
+  }
+}

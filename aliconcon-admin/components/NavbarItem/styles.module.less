@@ -1,0 +1,30 @@
+.root {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.navItem {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: 7px;
+  margin-top: unset !important;
+  border-radius: 8;
+  & * {
+    color: #000;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+.focus {
+  transition: 0.5s;
+  background-color: #eee;
+  & * {
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,66 @@
+.formWrapper {
+  position: relative;
+  &.formWrapperIsLoading {
+    pointer-events: none;
+  }
+  &.themeSecondary {
+    :global {
+      .ant-form-item {
+        &.item-special {
+          .ant-form-item-control {
+            padding: @padding-md;
+            border: 1px solid @cyan-blue-color;
+          }
+        }
+        .ant-form-item-label {
+          background-color: @light-blue-color;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 170px;
+          min-width: 170px;
+          // margin-right: @margin-md;
+          @media @desktop {
+            width: 110px;
+            min-width: 110px;
+          }
+          @media @small-desktop-or-laptop {
+            width: 90px;
+            min-width: 90px;
+            > label {
+              font-size: @font-size-sm;
+
+            }
+          }
+        }
+       
+        .ant-form-item-control {
+          padding-left: @padding-md;
+        }
+        &.noPaddingLeft {
+          .ant-form-item-control {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+  :global {
+    .ant-btn.btn--hasMinWidth {
+      min-width: 180px;
+    }
+    .spinWrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: @disabled-color-dark;
+      z-index: 1000;
+      pointer-events: none;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.loginFormWrapper {
+  width: 640px;
+  border-radius: 2px;
+  padding: @padding-md * 4;
+  margin-bottom: @margin-lg;
+  @media @mobile-and-tablet {
+    width: 100%;
+    box-shadow: none;
+    background-color: transparent;
+    padding: @padding-lg;
+    margin-top: 80px;
+  }
+  :global {
+    input{
+      /* Fix Input Zoom on iPhone 6, iPhone 6s, iPhone 7, iphone 8  */
+      @media screen and (device-aspect-ratio: 375/667) {
+        font-size: 16px;
+    }
+    }
+    .ant-form-item {
+      margin-bottom: @margin-lg;
+    }
+    .form {
+      &__wrapper {
+        margin-top: @margin-md * 4;
+        .ant-alert{
+          &.ant-alert-error {
+            margin-bottom: @margin-lg;
+          }
+        }
+      }
+      &__item {
+        &__icon {
+          color: @primary-color;
+        }
+        &__submitBtn {
+          margin-top: @margin-md;
+        }
+        &__field {
+          &--rememberMe {
+            margin-bottom: 0px;
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.copyrightTxt {
+  @media @mobile-and-tablet {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    margin-bottom: 0px !important;
+    font-size: 14px;
+    color: @manatee-color;
+  }
+}

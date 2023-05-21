@@ -1,0 +1,96 @@
+// Footer Component Styles
+
+// Define custom colors used in the footer
+@blue: #1866B1;
+@light-gray: #F0F2F5;
+@dark-gray: #808080;
+
+// Define custom font sizes used in the footer
+@font-size-small: 12px;
+@font-size-medium: 14px;
+
+// Define custom padding/margin sizes used in the footer
+@padding-small: 8px;
+@padding-medium: 16px;
+@padding-large: 24px;
+@margin-small: 8px;
+@margin-medium: 16px;
+@margin-large: 24px;
+
+.footer {
+  background-color: @light-gray;
+  border-top: 1px solid @dark-gray;
+
+  .footer__content {
+    // Set maximum width for the footer content
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: @padding-medium;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    // Set font size and color for the footer content
+    font-size: @font-size-medium;
+    color: @dark-gray;
+
+    .footer__section {
+      margin-bottom: @margin-medium;
+      width: 25%;
+
+      h4 {
+        // Set font size and color for the section title
+        font-size: @font-size-medium;
+        color: @blue;
+        margin-bottom: @margin-small;
+      }
+
+      ul {
+        padding-left: 0;
+
+        li {
+          list-style: none;
+          margin-bottom: @margin-small;
+
+          a {
+            // Set color for links in the footer
+            color: @dark-gray;
+
+            &:hover {
+              // Set color for link hover state
+              color: @blue;
+            }
+          }
+        }
+      }
+    }
+
+    .footer__social-icons {
+      margin-top: @margin-small;
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+
+        li {
+          list-style: none;
+          margin-right: @margin-small;
+          font-size: @font-size-small;
+
+          a {
+            // Set color for social media icons
+            color: @dark-gray;
+
+            &:hover {
+              // Set color for social media icon hover state
+              color: @blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
