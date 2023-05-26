@@ -4,11 +4,13 @@ import FormFilter from '../../components/FormFilter';
 import FilterPayment from '../../components/FilterPayment';
 import FormWrapper from '../../components/FormWrapper';
 import clsx from 'clsx';
-import { Typography } from 'antd';
+import { Button, Form, Select, Typography } from 'antd';
 import TableCommon from '../../components/TableCommon';
 import type { ColumnsType } from 'antd/es/table';
 import { PAGE_SIZE_10 } from '../../constants';
 import useQueryOrders from '../../app/hooks/useQueryOrders';
+import useMutationUpdateOrder from '../../app/hooks/useMutationUpdateOrder';
+import { showErrorMsg, showSuccessMsg } from '../../utils/helper';
 
 const { Title } = Typography;
 function OrderContainer() {
@@ -17,9 +19,9 @@ function OrderContainer() {
     limit: PAGE_SIZE_10,
     searchKey: '',
   });
-
+  const [newStatus, setNewStatus] = useState<any>('');
   const { data: payments, pagination, loading } = useQueryOrders(param);
-
+  const { doMutation: update, loading: updating } = useMutationUpdateOrder();
   const handleFilter = (value) => {
     setParam({
       ...param,
@@ -38,7 +40,23 @@ function OrderContainer() {
       }));
     }
   };
+  const handleChange = (value: string) => {
+    console.log(value);
+    setNewStatus(value);
+  };
 
+  const handleSubmit = (oldValue: any) => {
+    const a = { ...oldValue, status: newStatus };
+    console.log(a);
+    update({ id: oldValue._id, order: { ...oldValue, status: newStatus } })
+      .then(() => {
+        showSuccessMsg('Chỉnh sửa thành công thành công');
+      })
+      .catch((err) => {
+        showErrorMsg('Cập nhật thất bại');
+        console.log(err);
+      });
+  };
   const renderColumns = () => {
     let columns: ColumnsType = [
       {
@@ -70,11 +88,29 @@ function OrderContainer() {
         title: 'Trạng thái',
         dataIndex: 'status',
         key: 'status',
+        render: (_, record: any) => (
+          <div>
+            {' '}
+            <Select
+              defaultValue={record.status}
+              style={{ width: 150, marginRight: '20px' }}
+              onChange={handleChange}
+              options={[
+                { value: 'pending', label: 'pending' },
+                { value: 'processing', label: 'processing' },
+                { value: 'delivered', label: 'delivered' },
+                { value: 'cancelled', label: 'cancelled' },
+              ]}
+            />
+            <Button style={{ marginLeft: '10px' }} type="primary" onClick={() => handleSubmit(record)}>
+              Submit
+            </Button>
+          </div>
+        ),
       },
     ];
     return columns;
   };
-  console.log(payments);
   return (
     <div className={styles.root}>
       <Title className="title">Danh sách đơn hàng</Title>
@@ -90,7 +126,7 @@ function OrderContainer() {
         </FormWrapper>
       </div>
       <TableCommon
-        loading={loading}
+        loading={loading || updating}
         columns={renderColumns()}
         dataSource={payments}
         textTotal={`${pagination.totalItems}`}
